@@ -6,7 +6,7 @@
 #    By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 21:49:40 by mvernius          #+#    #+#              #
-#    Updated: 2021/03/03 12:28:49 by mvernius         ###   ########.fr        #
+#    Updated: 2021/03/07 02:39:26 by mvernius         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ PROJ_OBJS		= $(SRC:.c=.o)
 RM				= rm
 TMP_SWP			= .swp
 TMP_GCH			= .gch
+SNAPSHOT		= snapshot.bmp
 RED				="\033[0;31m"
 GREEN			="\033[0;32m"
 NC				="\033[0m"
