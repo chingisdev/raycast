@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 02:05:00 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 11:58:25 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:15:10 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		main(int argc, char **argv)
 			ft_raycast(all);
 		else
 		{
-			if (!(ft_strncmp(argv[2], "--save", ft_strlen("--save"))))
+			if (!(ft_strncmp(argv[2], "--save", 7)))
 			{
 				ft_make_bmp(all);
 			}
