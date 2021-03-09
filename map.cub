@@ -1,11 +1,11 @@
-R 1920 1080
-NO ./textures/te.xpm
-SO ./textures/te1.xpm
-WE ./textures/te2.xpm
-S ./textures/barrel.xpm
-EA ./textures/te3.xpm
-C 110,110,110
-F 220,220,234
+R                           500          500
+NO                 ./textures/north.xpm
+SO             ./textures/south.xpm
+WE       ./textures/west.xpm
+EA      ./textures/east.xpm
+S            ./textures/barrel.xpm
+C            110,     110,110
+F             220  ,  220  ,   234
 
 
 1111111111

@@ -6,19 +6,18 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 02:05:00 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/08 15:15:10 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:59:08 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_cub3d.h"
 
-void	ft_global_init(t_all *all, char *argv)
+static void	ft_global_init(t_all *all)
 {
 	all->image = (t_img *)malloc(sizeof(t_img));
 	if (NULL == all->image)
 		ft_close_if_error("ERROR: allocating image\n");
 	all->win.mlx = mlx_init();
-	ft_parser(argv, all);
 	all->win.win = mlx_new_window(all->win.mlx, \
 		all->info.res_width, all->info.res_height, "CUB3D");
 	all->image->img = mlx_new_image(all->win.mlx, \
@@ -33,7 +32,7 @@ void	ft_global_init(t_all *all, char *argv)
 	ft_init_sprite(all);
 }
 
-void	ft_raycast(t_all *all)
+void		ft_raycast(t_all *all)
 {
 	ft_draw_screen(all);
 	mlx_hook(all->win.win, 2, 0, ft_key_press, all);
@@ -43,7 +42,7 @@ void	ft_raycast(t_all *all)
 	mlx_loop(all->win.mlx);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_all	*all;
 
@@ -52,7 +51,8 @@ int		main(int argc, char **argv)
 		ft_close_if_error("ERROR: allocating all in main");
 	if (argc > 1 && argc < 4)
 	{
-		ft_global_init(all, argv[1]);
+		ft_parser(argv[1], all);
+		ft_global_init(all);
 		if (argc == 2)
 			ft_raycast(all);
 		else

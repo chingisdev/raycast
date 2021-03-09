@@ -223,7 +223,7 @@ void			ft_check_bounds(char **map, t_all *all);
 void			ft_close_if_error(const char *str);
 void			ft_puterror(const char *str);
 void			ft_pix_put(t_img *img, int x, int y, unsigned int color);
-void			ft_check_input_file_extension(char *str);
+void 			ft_check_file_extension(char *str, char *ext);
 void			ft_check_input_data(t_map_info *info);
 void			ft_check_fill_res(t_map_info *info);
 void			ft_check_fill_floor_col(t_map_info *info);
@@ -240,5 +240,6 @@ void			ft_swap_sprites(t_all *all, int i, int j);
 void			ft_quicksort_spr_arr(t_all *all, int first, int last);
 char			*ft_del_symb_from_end(char *str, char symb);
 unsigned int	ft_get_color(t_img *img, int x, int y);
+char 			*ft_skip_space(char *str);
 
 #endif

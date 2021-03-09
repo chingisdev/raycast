@@ -6,7 +6,7 @@
 #    By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 21:49:40 by mvernius          #+#    #+#              #
-#    Updated: 2021/03/07 02:39:26 by mvernius         ###   ########.fr        #
+#    Updated: 2021/03/09 21:32:43 by mvernius         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,18 @@ LIB_DIR 		= ./0LIB
 LIB_NAME		= libft.a
 OPENGL			= -framework OpenGL
 APPKIT			= -framework AppKit
-SRC_PATH		= 0LIB 2PARSER 3CHECKS 4DRAWING 5UTILS
-SRC_LIST		= $(wildcard $(dir)/*.c)
-SRC				= $(foreach dir, $(SRC_PATH), $(SRC_LIST))
+#SRC_PATH		= 0LIB 2PARSER 3CHECKS 4DRAWING 5UTILS
+#SRC_LIST		= $(wildcard $(dir)/*.c)
+#SRC				= $(foreach dir, $(SRC_PATH), $(SRC_LIST))
+SRC				= 2PARSER/ft_init_plr_plane.c 2PARSER/ft_parse_col.c 2PARSER/ft_parse_info.c \
+					2PARSER/ft_parse_utils.c 2PARSER/ft_parser.c 2PARSER/ft_set_player_dir.c \
+					3CHECKS/ft_check_bounds.c 3CHECKS/ft_check_fill.c 3CHECKS/ft_check_input_data.c \
+					3CHECKS/ft_check_input_file_extension.c 3CHECKS/ft_surround_whitespace.c \
+					4DRAWING/ft_draw_sprites.c 4DRAWING/ft_draw_sprites2.c 4DRAWING/ft_draw_walls.c \
+					4DRAWING/ft_draw_walls2.c 4DRAWING/ft_draw.c 4DRAWING/ft_make_bmp.c \
+					5UTILS/ft_close_if_error.c 5UTILS/ft_del_symb_from_end.c 5UTILS/ft_free.c \
+					5UTILS/ft_hook_corresponding.c 5UTILS/ft_inits.c 5UTILS/ft_motions.c \
+					5UTILS/ft_my_pixel_put.c 5UTILS/ft_puterror.c 5UTILS/ft_rotations.c 5UTILS/main.c
 PROJ_OBJS		= $(SRC:.c=.o)
 RM				= rm
 TMP_SWP			= .swp

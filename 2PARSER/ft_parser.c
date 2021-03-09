@@ -98,7 +98,7 @@ int		ft_parser(char *file_name, t_all *all)
 	char	**file;
 
 	line = NULL;
-	ft_check_input_file_extension(file_name);
+	ft_check_file_extension(file_name, ".cub");
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		ft_close_if_error("ERROR: can not open file in func \"parser\"");
@@ -109,7 +109,7 @@ int		ft_parser(char *file_name, t_all *all)
 	if (NULL == file)
 	{
 		free(line);
-		ft_close_if_error("ERROR: can't be splitted\n");
+		ft_close_if_error("ERROR: can't split\n");
 	}
 	run_checks(all, &line, &file);
 	return (0);

@@ -15,21 +15,21 @@
 void	ft_fill_struct_info(char *str, t_map_info *info)
 {
 	if (!(ft_strncmp(str, "R ", ft_strlen("R "))) && !(info->res_flag))
-		info->res = ft_strjoin("", (str + 2));
+		info->res = ft_strjoin("", ft_skip_space(str + 1));
 	else if (!(ft_strncmp(str, "NO ", ft_strlen("NO "))))
-		info->north_path = ft_strjoin("", (str + 3));
+		info->north_path = ft_strjoin("", ft_skip_space(str + 2));
 	else if (!(ft_strncmp(str, "SO ", ft_strlen("SO "))))
-		info->south_path = ft_strjoin("", (str + 3));
+		info->south_path = ft_strjoin("", ft_skip_space(str + 2));
 	else if (!(ft_strncmp(str, "WE ", ft_strlen("WE "))))
-		info->west_path = ft_strjoin("", (str + 3));
+		info->west_path = ft_strjoin("", ft_skip_space(str + 2));
 	else if (!(ft_strncmp(str, "EA ", ft_strlen("EA "))))
-		info->east_path = ft_strjoin("", (str + 3));
+		info->east_path = ft_strjoin("", ft_skip_space(str + 2));
 	else if (!(ft_strncmp(str, "S ", ft_strlen("S "))))
-		info->spr_path = ft_strjoin("", (str + 2));
+		info->spr_path = ft_strjoin("", ft_skip_space(str + 1));
 	else if (!(ft_strncmp(str, "F ", ft_strlen("F "))) && !(info->floor_flag))
-		info->floor = ft_strjoin("", (str + 2));
+		info->floor = ft_strjoin("", ft_skip_space(str + 1));
 	else if (!(ft_strncmp(str, "C ", ft_strlen("C "))) && !(info->ceil_flag))
-		info->ceiling = ft_strjoin("", (str + 2));
+		info->ceiling = ft_strjoin("", ft_skip_space(str + 1));
 	else
 		ft_close_if_error("ERROR: wrong value (line) in map.cub\n");
 }
