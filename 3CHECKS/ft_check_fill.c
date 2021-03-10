@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:49:41 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 11:27:17 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:28:54 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_run_cycle_res(char *s, int *count, t_map_info *info)
 	if (*count > 5)
 		info->res_height = -1;
 	if (ft_isalpha(*s) || ft_isspace(*s))
-		ft_close_if_error("ERROR: wrong symbols after num\n");
+		ft_close_if_error("Error\nwrong symbols after num\n");
 }
 
 void		ft_check_fill_res(t_map_info *info)
@@ -49,7 +49,7 @@ void		ft_check_fill_res(t_map_info *info)
 
 	ft_run_cycle_res(info->res, &count, info);
 	if (!info->res_height || !info->res_width)
-		ft_close_if_error("ERROR: invalid resolution\n");
+		ft_close_if_error("Error\ninvalid resolution\n");
 	info->res_flag = 1;
 }
 

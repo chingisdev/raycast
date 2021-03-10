@@ -34,7 +34,7 @@ static int	ft_compare_symb_with_special(char c, t_all *all)
 		all->info.spr_sum++;
 	}
 	if (c != '1' && c != '2' && c != ' ' && c != '\n')
-		ft_close_if_error("ERROR: wrong symbols in the map");
+		ft_close_if_error("Error\nwrong symbols in the map");
 	return (0);
 }
 
@@ -54,7 +54,7 @@ static void	ft_check_neighbours(char **map, int i, int j)
 		while (++count_col < 3)
 		{
 			if (map[row + count_row][col + count_col] == ' ')
-				ft_close_if_error("ERROR: map isn't surrounded");
+				ft_close_if_error("Error\nmap isn't surrounded");
 		}
 	}
 }
@@ -71,7 +71,7 @@ void		ft_check_bounds2(char **map, int i, int *parse_flag, t_all *all)
 		if (check)
 			ft_check_neighbours(map, i, j);
 		if (check == 2 && *parse_flag == 1)
-			ft_close_if_error("ERROR: more than one player was given");
+			ft_close_if_error("Error\nmore than one player was given");
 		if (check == 2)
 		{
 			all->plr.pos_x = i + 0.5;
@@ -95,5 +95,5 @@ void		ft_check_bounds(char **map, t_all *all)
 		ft_check_bounds2(map, i, &parse_flag, all);
 	}
 	if (!parse_flag)
-		ft_close_if_error("ERROR: player does not exist");
+		ft_close_if_error("Error\nplayer does not exist");
 }

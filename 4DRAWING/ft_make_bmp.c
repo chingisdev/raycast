@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:29:46 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 13:39:56 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:29:47 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_make_bmp(t_all *all)
 	fd = open("snapshot.bmp", O_CREAT | O_WRONLY | O_TRUNC, 0655);
 	if (fd < 0)
 	{
-		ft_close_if_error("ERROR: can't make snapshot.bmp\n");
+		ft_close_if_error("Error\ncan't make snapshot.bmp\n");
 	}
 	ft_draw_screen(all);
 	bmp_size = 14 + 40 + (4 * all->info.res_height * all->info.res_width);

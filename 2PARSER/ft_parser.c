@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:33:52 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 10:55:00 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:28:25 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_check_num_param(t_all *all, char **file)
 	if (param != 8)
 	{
 		ft_my_free2(ft_arrlen(file), file);
-		ft_close_if_error("ERROR: wrong number of parameters are given\n");
+		ft_close_if_error("Error\nwrong number of parameters are given\n");
 	}
 	ft_check_input_data(&(all->info));
 }
@@ -74,7 +74,7 @@ void	ft_create_map(t_all *all, char **file)
 	arlen = ft_arrlen_pos(file, pos);
 	map = (char **)malloc((arlen + 3) * sizeof(char *));
 	if (NULL == map)
-		ft_close_if_error("ERROR: allocation problem in func \"fill_map\"\n");
+		ft_close_if_error("Error\nallocation problem in func \"fill_map\"\n");
 	all->max_str_len = ft_find_max_len(file);
 	map[0] = ft_generate_str(' ', all->max_str_len);
 	i = 1;
@@ -101,7 +101,7 @@ int		ft_parser(char *file_name, t_all *all)
 	ft_check_file_extension(file_name, ".cub");
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-		ft_close_if_error("ERROR: can not open file in func \"parser\"");
+		ft_close_if_error("Error\ncan not open file in func \"parser\"");
 	while ((read(fd, &buf, 1)) > 0)
 		line = ft_strnjoin_char(line, buf, 1);
 	check_map_lines(line);
@@ -109,7 +109,7 @@ int		ft_parser(char *file_name, t_all *all)
 	if (NULL == file)
 	{
 		free(line);
-		ft_close_if_error("ERROR: can't split\n");
+		ft_close_if_error("Error\ncan't split\n");
 	}
 	run_checks(all, &line, &file);
 	return (0);

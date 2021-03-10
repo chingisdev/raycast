@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:08:47 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 11:27:21 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:27:43 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void		ft_parse_col(char *s, int *color)
 	{
 		s += ft_atoi_modif(s, &tmp, &check);
 		if (tmp < 0 || tmp > 255)
-			ft_close_if_error("ERROR: wrong value for floor color\n");
+			ft_close_if_error("Error\nwrong value for floor color\n");
 		*color = *color | (tmp << (shift * i));
 	}
 	if (check == 3 && (ft_isalpha(*s) || ft_isspace(*s)))
-		ft_close_if_error("ERROR: wrong symbols after num\n");
+		ft_close_if_error("Error\nwrong symbols after num\n");
 	if (check != 3)
-		ft_close_if_error("ERROR: wrong number values in string\n");
+		ft_close_if_error("Error\nwrong number values in string\n");
 }
 
 void		ft_check_fill_floor_col(t_map_info *info)
@@ -50,7 +50,7 @@ void		ft_check_fill_floor_col(t_map_info *info)
 		info->floor_flag = 1;
 	}
 	else
-		ft_close_if_error("ERROR: try to give me floor color baybe\n");
+		ft_close_if_error("Error\ntry to give me floor color baybe\n");
 }
 
 void		ft_check_fill_ceiling_col(t_map_info *info)
@@ -67,5 +67,5 @@ void		ft_check_fill_ceiling_col(t_map_info *info)
 		info->ceil_flag = 1;
 	}
 	else
-		ft_close_if_error("ERROR: where is my ceiling col?\n");
+		ft_close_if_error("Error\nwhere is my ceiling col?\n");
 }

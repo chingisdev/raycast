@@ -19,20 +19,20 @@ void ft_check_file_extension(char *str, char *ext)
 
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
-		ft_close_if_error("ERROR: can't open file\n");
+		ft_close_if_error("Error\ncan't open file\n");
 	file_ext = ft_strrchr(str, '.');
 	if (ft_strncmp(ext, file_ext, ft_strlen(ext)))
-		ft_close_if_error("ERROR: file extension is not correct");
+		ft_close_if_error("Error\nfile extension is not correct");
 	fd = open(str, O_DIRECTORY);
 	if (fd > 0)
-		ft_close_if_error("ERROR: not a file\n");
+		ft_close_if_error("Error\nnot a file\n");
 	if (*str == '.' && (ft_strlen(str) == ft_strlen(ext)))
-		ft_close_if_error("ERROR: hidden file\n");
+		ft_close_if_error("Error\nhidden file\n");
 	if (ft_strlen(str) > ft_strlen(file_ext))
 	{
 		file_ext--;
 		if (!(ft_isalpha(*file_ext) || ft_isdigit(*file_ext)))
-			ft_close_if_error("ERROR: hidden file\n");
+			ft_close_if_error("Error\nhidden file\n");
 	}
 	close(fd);
 }

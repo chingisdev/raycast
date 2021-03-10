@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:36:21 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/10 16:22:55 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:27:59 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_fill_struct_info(char *str, t_map_info *info)
 	else if (!(ft_strncmp(str, "C ", ft_strlen("C "))) && !(info->ceil_flag))
 		info->ceiling = ft_strjoin("", ft_skip_space(str + 1));
 	else
-		ft_close_if_error("ERROR: wrong value (line) in map.cub\n");
+		ft_close_if_error("Error\nwrong value (line) in map.cub\n");
 }
 
 void	check_map_lines(char *line)
@@ -52,7 +52,7 @@ void	check_map_lines(char *line)
 	while (line[i + 1])
 	{
 		if (line[i] == '\n' && line[i + 1] == '\n')
-			ft_close_if_error("ERROR: white lines in map\n");
+			ft_close_if_error("Error\nwhite lines in map\n");
 		i++;
 	}
 }

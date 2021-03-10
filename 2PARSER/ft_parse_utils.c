@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_spr_utils.c                               :+:      :+:    :+:   */
+/*   ft_parse_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 00:32:59 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 10:54:47 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/10 16:28:12 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,14 @@ void		ft_prepare_sprites(t_all *all)
 	all->spr_arr = (t_sprite *)malloc((all->info.spr_sum)
 			* sizeof(t_sprite));
 	if (NULL == all->spr_arr)
-		ft_close_if_error("ERROR: malloc in ft_parser");
+		ft_close_if_error("Error\nmalloc in ft_parser");
 	ft_add_sprites_to_arr(all->map, &(all->spr_arr));
 	all->spr_order = (int *)malloc(all->info.spr_sum * sizeof(int));
 	if (NULL == all->spr_order)
-		ft_close_if_error("ERROR: allocating spr_order\n");
+		ft_close_if_error("Error\nallocating spr_order\n");
 	all->spr_dist = (double *)malloc(all->info.spr_sum * sizeof(double));
 	if (NULL == all->spr_dist)
-		ft_close_if_error("ERROR: allocating spr_dist\n");
+		ft_close_if_error("Error\nallocating spr_dist\n");
 }
 
 void		run_checks(t_all *all, char **line, char ***file)
