@@ -31,9 +31,9 @@ SRC				= 2PARSER/ft_init_plr_plane.c 2PARSER/ft_parse_col.c 2PARSER/ft_parse_inf
 					3CHECKS/ft_check_input_file_extension.c 3CHECKS/ft_surround_whitespace.c \
 					4DRAWING/ft_draw_sprites.c 4DRAWING/ft_draw_sprites2.c 4DRAWING/ft_draw_walls.c \
 					4DRAWING/ft_draw_walls2.c 4DRAWING/ft_draw.c 4DRAWING/ft_make_bmp.c \
-					5UTILS/ft_close_if_error.c 5UTILS/ft_del_symb_from_end.c 5UTILS/ft_free.c \
-					5UTILS/ft_hook_corresponding.c 5UTILS/ft_inits.c 5UTILS/ft_motions.c \
-					5UTILS/ft_my_pixel_put.c 5UTILS/ft_puterror.c 5UTILS/ft_rotations.c 5UTILS/main.c \
+					5UTILS/ft_close_if_error.c 5UTILS/ft_free.c 5UTILS/ft_hook_corresponding.c\
+					5UTILS/ft_inits.c 5UTILS/ft_motions.c 5UTILS/ft_my_pixel_put.c\
+					5UTILS/ft_puterror.c 5UTILS/ft_rotations.c 5UTILS/main.c \
 					5UTILS/ft_atoi_modif.c
 PROJ_OBJS		= $(SRC:.c=.o)
 RM				= rm
