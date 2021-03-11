@@ -65,6 +65,7 @@ $(NAME): $(PROJ_OBJS) $(HEADER)
 		@$(CC) $(CFLAGS) $(PROJ_OBJS) $(LIB_DIR)/$(LIB_NAME) \
 		$(MLX_LIB_NAME) $(OPENGL) $(APPKIT) -o $(NAME)
 		@echo $(GREEN)I made it. Check folder and run cub3D $(NC)
+		@#make clean
 
 clean:
 		@echo $(RED)Deleting $(NAME) PROJECT objects $(NC)
