@@ -11,7 +11,7 @@ GREEN		="\033[0;32m"
 NC			="\033[0m"
 
 #SOURCES		= $(shell find . -type f -name '*.c' -and -not -name 'ft_lst*.c')
-SOURCES		= ft_arrlen_pos.c ft_arrlen.c ft_atoi_modif.c \
+SOURCES		= ft_arrlen_pos.c ft_arrlen.c \
 				ft_bzero.c ft_generate_str.c ft_isalpha.c \
 				ft_isdigit.c ft_isspace.c ft_memcpy.c \
 				ft_split.c ft_strdup.c ft_strjoin.c \

@@ -1,12 +1,11 @@
-     R                           500          500
+R            500          500
 NO                 ./textures/IMG_6463.xpm
 SO             ./textures/IMG_6508.xpm
-       WE       ./textures/IMG_6840.xpm
+WE       ./textures/IMG_6840.xpm
 EA      ./textures/IMG_6849.xpm
-                    S            ./textures/barrel.xpm
- C            110,     110,110
-F             220  ,  220  ,   234
-
+S            ./textures/barrel.xpm
+C        110,     110,110
+F             220  ,42 ,   234
 
 1111111111
 1000000001

@@ -241,5 +241,6 @@ void			ft_quicksort_spr_arr(t_all *all, int first, int last);
 char			*ft_del_symb_from_end(char *str, char symb);
 unsigned int	ft_get_color(t_img *img, int x, int y);
 char 			*ft_skip_space(char *str);
+int				ft_atoi_modif(char *str, int *num, int *check);
 
 #endif

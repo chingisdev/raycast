@@ -30,7 +30,7 @@ void		ft_parse_col(char *s, int *color)
 			ft_close_if_error("Error\nwrong value for floor color\n");
 		*color = *color | (tmp << (shift * i));
 	}
-	if (check == 3 && (ft_isalpha(*s) || ft_isspace(*s)))
+	if (check == 3 && *s != '\0')
 		ft_close_if_error("Error\nwrong symbols after num\n");
 	if (check != 3)
 		ft_close_if_error("Error\nwrong number values in string\n");
@@ -42,8 +42,6 @@ void		ft_check_fill_floor_col(t_map_info *info)
 
 	info->floor_col = 0;
 	s = info->floor;
-//	while (ft_isspace(*s))
-//		s++;
 	if (s)
 	{
 		ft_parse_col(s, &(info->floor_col));
@@ -59,8 +57,6 @@ void		ft_check_fill_ceiling_col(t_map_info *info)
 
 	info->ceil_col = 0;
 	s = info->ceiling;
-//	while (ft_isspace(*s))
-//		s++;
 	if (s)
 	{
 		ft_parse_col(s, &(info->ceil_col));

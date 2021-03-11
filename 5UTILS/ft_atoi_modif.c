@@ -10,32 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_cub3d.h"
 
 int	ft_atoi_modif(char *str, int *num, int *check)
 {
 	int	iter;
-	int	sign;
 	int	flag;
 
 	flag = -2;
 	*num = 0;
-	sign = 1;
-	iter = -1;
-	while (str[++iter] && !(ft_isdigit(str[iter]))
-		&& str[iter] != '-' && str[iter] != '\n')
-		;
-	if (str[iter] == '-' || str[iter] == '+')
-	{
-		if (str[iter++] == '-')
-			sign *= -1;
-	}
+	iter = 0;
+	while (ft_isspace(str[iter]))
+		iter++;
+	if (str[iter] == ',')
+		iter++;
+	while (ft_isspace(str[iter]))
+		iter++;
 	while (ft_isdigit(str[iter]))
 	{
 		flag = 1;
 		*num = *num * 10 + (str[iter++] - '0');
+		if (*num > 255)
+			ft_close_if_error("Error\nwrong number value\n");
 	}
-	*num *= sign;
 	if (flag == 1)
 		*check += 1;
 	return (iter);
