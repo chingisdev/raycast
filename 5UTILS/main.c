@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 02:05:00 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/09 22:59:08 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 22:12:51 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,14 @@ int			main(int argc, char **argv)
 		ft_close_if_error("ERROR: allocating all in main");
 	if (argc > 1 && argc < 4)
 	{
+		if (argc == 3 && ft_strncmp(argv[2], "--save", 7))
+			ft_close_if_error("Error\nwrong second argument\n");
 		ft_parser(argv[1], all);
 		ft_global_init(all);
 		if (argc == 2)
 			ft_raycast(all);
 		else
-		{
-			if (!(ft_strncmp(argv[2], "--save", 7)))
-			{
-				ft_make_bmp(all);
-			}
-			else
-			{
-				ft_close_if_error("ERROR: wrong second argument\n");
-			}
-		}
+			ft_make_bmp(all);
 	}
 	else
 		ft_close_if_error("ERROR: wrong number of arguments\n");

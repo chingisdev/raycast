@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 10:23:32 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 10:23:36 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 22:19:49 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_arrlen_pos(char **matrix, int pos)
 {
-	int	i;
+	int	iter;
 
-	i = 0;
+	iter = 0;
 	while (matrix[pos] != NULL)
 	{
-		i++;
+		iter++;
 		pos++;
 	}
-	return (i);
+	return (iter);
 }
