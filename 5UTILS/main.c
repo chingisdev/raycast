@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 02:05:00 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/11 22:12:51 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 22:33:42 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@ static void	ft_global_init(t_all *all)
 {
 	all->image = (t_img *)malloc(sizeof(t_img));
 	if (NULL == all->image)
-		ft_close_if_error("ERROR: allocating image\n");
+		ft_close_if_error("Error\nallocating image\n");
 	all->win.mlx = mlx_init();
+	if (all->win.mlx == NULL)
+		ft_close_if_error("Error\nmlx didn't init\n");
 	all->win.win = mlx_new_window(all->win.mlx, \
 		all->info.res_width, all->info.res_height, "CUB3D");
+	if (all->win.win == NULL)
+		ft_close_if_error("Error\nwin didn't created\n");
 	all->image->img = mlx_new_image(all->win.mlx, \
 		all->info.res_width, all->info.res_height);
+	if (all->image->img == NULL)
+		ft_close_if_error("Error\nimage didn't created\n");
 	all->image->addr = mlx_get_data_addr(all->image->img, \
 		&(all->image->bpp), &(all->image->line_l), &(all->image->end));
+	if (all->image->addr == NULL)
+		ft_close_if_error("Error\naddr didn't created\n");
 	all->z_buf = (double *)malloc(sizeof(double) * (all->info.res_width + 1));
 	if (NULL == all->z_buf)
-		ft_close_if_error("ERROR: allocating z_buf\n");
+		ft_close_if_error("Error\nallocating z_buf\n");
 	ft_init_plr_plane(all);
 	ft_init_all_textures(all);
 	ft_init_sprite(all);
@@ -48,7 +56,7 @@ int			main(int argc, char **argv)
 
 	all = (t_all *)malloc(sizeof(t_all));
 	if (NULL == all)
-		ft_close_if_error("ERROR: allocating all in main");
+		ft_close_if_error("Error\nallocating all in main");
 	if (argc > 1 && argc < 4)
 	{
 		if (argc == 3 && ft_strncmp(argv[2], "--save", 7))
@@ -61,6 +69,6 @@ int			main(int argc, char **argv)
 			ft_make_bmp(all);
 	}
 	else
-		ft_close_if_error("ERROR: wrong number of arguments\n");
+		ft_close_if_error("Error\nwrong number of arguments\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 15:02:05 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/03 11:58:42 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 22:35:10 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,12 @@ void	ft_draw_screen(t_all *all)
 	mlx_destroy_image(all->win.mlx, all->image->img);
 	all->image->img = mlx_new_image(all->win.mlx, \
 		all->info.res_width, all->info.res_height);
+	if (all->image->img == NULL)
+		ft_close_if_error("Error\nimage didn't created\n");
 	all->image->addr = mlx_get_data_addr(all->image->img, \
 		&(all->image->bpp), &(all->image->line_l), &(all->image->end));
+	if (all->image->addr == NULL)
+		ft_close_if_error("Error\naddr didn't created\n");
 	ft_wall_casting(all);
 	ft_sprite_casting(all);
 	mlx_put_image_to_window(all->win.mlx, all->win.win, all->image->img, 0, 0);

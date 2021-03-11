@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:49:41 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/10 16:28:54 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 22:29:42 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,13 @@ void		ft_check_fill_res(t_map_info *info)
 	count = 0;
 	info->res_width = 0;
 	info->res_height = 0;
-
 	ft_run_cycle_res(info->res, &count, info);
 	if (!info->res_height || !info->res_width)
 		ft_close_if_error("Error\ninvalid resolution\n");
 	info->res_flag = 1;
 }
 
-char *ft_skip_space(char *str)
+char		*ft_skip_space(char *str)
 {
 	char *copy;
 
@@ -62,7 +61,8 @@ char *ft_skip_space(char *str)
 		copy++;
 	return (copy);
 }
-void 		ft_check_paths(t_map_info *info)
+
+void		ft_check_paths(t_map_info *info)
 {
 	ft_check_file_extension(info->north_path, ".xpm");
 	ft_check_file_extension(info->west_path, ".xpm");

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_file_extension.c                    :+:      :+:    :+:   */
+/*   ft_check_input_file_extension.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 12:49:41 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/09 23:07:43 by mvernius         ###   ########.fr       */
+/*   Created: 2021/03/11 22:28:39 by mvernius          #+#    #+#             */
+/*   Updated: 2021/03/11 22:28:52 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_cub3d.h"
 
-void ft_check_file_extension(char *str, char *ext)
+void	ft_check_file_extension(char *str, char *ext)
 {
 	char	*file_ext;
 	int		fd;
