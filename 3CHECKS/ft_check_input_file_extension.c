@@ -19,7 +19,7 @@ void ft_check_file_extension(char *str, char *ext)
 
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
-		ft_close_if_error("Error\ncan't open file\n");
+		ft_close_if_error("Error\ncan't open file or wrong path\n");
 	file_ext = ft_strrchr(str, '.');
 	if (ft_strncmp(ext, file_ext, ft_strlen(ext)))
 		ft_close_if_error("Error\nfile extension is not correct");

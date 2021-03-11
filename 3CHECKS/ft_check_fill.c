@@ -36,7 +36,7 @@ static void	ft_run_cycle_res(char *s, int *count, t_map_info *info)
 	if (*count > 5)
 		info->res_height = -1;
 	if (*s != '\0')
-		ft_close_if_error("Error\nwrong symbols after num\n");
+		ft_close_if_error("Error\nwrong symbols in resolution\n");
 }
 
 void		ft_check_fill_res(t_map_info *info)
