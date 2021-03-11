@@ -6,7 +6,7 @@
 #    By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/25 21:49:40 by mvernius          #+#    #+#              #
-#    Updated: 2021/03/09 21:32:43 by mvernius         ###   ########.fr        #
+#    Updated: 2021/03/12 00:43:15 by mvernius         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,6 @@ $(NAME): $(PROJ_OBJS) $(HEADER)
 		@$(CC) $(CFLAGS) $(PROJ_OBJS) $(LIB_DIR)/$(LIB_NAME) \
 		$(MLX_LIB_NAME) $(OPENGL) $(APPKIT) -o $(NAME)
 		@echo $(GREEN)I made it. Check folder and run cub3D $(NC)
-		@#make clean
 
 clean:
 		@echo $(RED)Deleting $(NAME) PROJECT objects $(NC)

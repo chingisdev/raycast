@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:33:52 by mvernius          #+#    #+#             */
-/*   Updated: 2021/03/10 16:28:25 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/12 00:22:58 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		ft_get_param_num(char **map, t_all *all)
 
 	i = 0;
 	param = 0;
-	while (map[i][0] != '1' && map[i][0] != ' ')
+	while (map[i] && map[i][0] != '1' && map[i][0] != ' ')
 	{
-		if (map[i][0] != '\0')
+		if (map[i][0] != '\0' && param < 8)
 		{
 			ft_fill_struct_info(map[i], &(all->info));
 			param++;
@@ -45,6 +45,8 @@ int		ft_get_param_num(char **map, t_all *all)
 		i++;
 	}
 	all->map_start = i;
+	if (map[all->map_start] == NULL)
+		ft_close_if_error("Error\nno map\n");
 	return (param);
 }
 

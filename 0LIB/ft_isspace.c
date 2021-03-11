@@ -6,7 +6,7 @@
 /*   By: mvernius <mvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 18:07:06 by mvernius          #+#    #+#             */
-/*   Updated: 2021/01/28 18:07:28 by mvernius         ###   ########.fr       */
+/*   Updated: 2021/03/11 23:14:18 by mvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@ int	ft_isspace(char c)
 	int	result;
 
 	result = 0;
-	if (c == '\t' || c == '\n' || c == '\v' || \
-		c == '\f' || c == '\r' || c == ' ')
+	if (c == ' ')
 		result = 1;
 	return (result);
 }

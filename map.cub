@@ -4,8 +4,8 @@ SO             ./textures/te1.xpm
 WE       ./textures/te2.xpm
 EA      ./textures/te3.xpm
 S            ./textures/barrel.xpm
-C        110,     55, 110
-F             0, 0, 0
+C        110     , 55      , 110
+F            0    ,   0      , 0
 
 
 1111111111
